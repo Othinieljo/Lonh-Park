@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { FontDisplay, useFonts } from 'expo-font';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import Main from './Containers/App/Main';
+import SignupScreen from './Containers/Signup/SignupScreen';
+import LoginScreen from './Containers/Login/LoginScreen';
+import Navigator from './src/Navigations/Navigator';
+
+
+
+
+
+
+
+
+
+
+const  App = () => {
+  const [loaded] = useFonts({
+    GothicA1: require('./assets/Fonts/GothicA1-Black.ttf'),
+    GothicA1_B: require('./assets/Fonts/GothicA1-Bold.ttf'),
+    Inconsolata: require('./assets/Fonts/Inconsolata-Black.ttf'),
+    Inconsolata_B: require('./assets/Fonts/Inconsolata-Bold.ttf')
+    
+    
+  });
+  
+  if (!loaded) {
+    return null;
+  }
+  return(
+    <Navigator/>
+    
+  )
+  
+   }
+   
+export default App;
+
+
