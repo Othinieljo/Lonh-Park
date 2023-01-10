@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { View,StyleSheet } from "react-native";
 import MapView from 'react-native-maps';
+import FlatListB from "../../Components/FlatList";
 
 export default class ChoiceScreen extends Component{
     render(){
@@ -14,7 +15,9 @@ export default class ChoiceScreen extends Component{
                     longitudeDelta : 0.0421 , 
                   }} 
                   />
-                <View style = {styles.box}></View>
+                <View style = {styles.box}>
+                    <FlatListB onPress ={()=>this.props.navigation.navigate('Parking')}  />
+                </View>
             </View>
         )
     }
